@@ -227,7 +227,7 @@ async function autoReact(message) {
     } else if (message.content.includes("penguinmod")) {
         message.react('🐧').catch(() => null);
     } else if (message.content.includes("hi") || message.content.includes("hello") || message.content.includes("hiya")) {
-        
+        message.react(waveId).catch(() => null);
     } else if (message.content.includes("scratch")) {
         message.react('🐱').catch(() => null);
    }
