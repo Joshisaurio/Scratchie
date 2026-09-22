@@ -9,7 +9,6 @@ const semanticize = require('../functions/semanticize');
 const challenges = require('../data/challenges.json');
 const randomArrayInt = require('../functions/random');
 const type = require('../functions/type.js');
-const emojis = require('../data/emojis.json');
 
 const reactionHandlers = [
     (message) => {
