@@ -222,7 +222,7 @@ async function autoReact(message) {
 
     if (message.content.includes("turbowarp")) {
         message.react('🍡').catch(() => null);
-    } else if (message.content.includes("nitrbolt")) {
+    } else if (message.content.includes("nitrobolt")) {
         message.react('⚡').catch(() => null);
     } else if (message.content.includes("penguinmod")) {
         message.react('🐧').catch(() => null);
@@ -230,7 +230,7 @@ async function autoReact(message) {
         message.react(waveId).catch(() => null);
     } else if (message.content.includes("scratch")) {
         message.react('🐱').catch(() => null);
-   }
+    }
 }
 
 async function captureHelp(message) {
