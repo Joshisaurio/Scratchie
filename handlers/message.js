@@ -9,6 +9,9 @@ const semanticize = require('../functions/semanticize');
 const challenges = require('../data/challenges.json');
 const randomArrayInt = require('../functions/random');
 const type = require('../functions/type.js');
+const emojis = require('../data/emojis.json');
+
+const waveId = emojis.wave.replace(/[^0-9]/g, ''); 
 
 /**
  * Capture Scratch profile links and send a preview of them
@@ -216,6 +219,18 @@ async function autoReact(message) {
             message.react('❤️').catch(() => null);
         }
     }
+
+    if (message.content.includes("turbowarp")) {
+        message.react('🍡').catch(() => null);
+    } else if (message.content.includes("nitrbolt")) {
+        message.react('⚡').catch(() => null);
+    } else if (message.content.includes("penguinmod")) {
+        message.react('🐧').catch(() => null);
+    } else if (message.content.includes("hi") || message.content.includes("hello") || message.content.includes("hiya")) {
+        
+    } else if (message.content.includes("scratch")) {
+        message.react('🐱').catch(() => null);
+   }
 }
 
 async function captureHelp(message) {
