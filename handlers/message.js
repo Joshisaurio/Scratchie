@@ -217,18 +217,26 @@ async function autoReact(message) {
             message.react('❤️').catch(() => null);
         }
     }
-
-    if (message.content.includes("turbowarp")) {
+    
+  switch (true) {
+    case message.content.includes("turbowarp"):
         message.react('🍡').catch(() => null);
-    } else if (message.content.includes("nitrobolt")) {
+        break;
+    case message.content.includes("nitrobolt"):
         message.react('⚡').catch(() => null);
-    } else if (message.content.includes("penguinmod")) {
+        break;
+    case message.content.includes("penguinmod"):
         message.react('🐧').catch(() => null);
-    } else if (message.content.includes("hi") || message.content.includes("hello") || message.content.includes("hiya")) {
+        break;
+    case message.content.includes("hi"):
+    case message.content.includes("hello"):
+    case message.content.includes("hiya"):
         message.react('1359604048801829114').catch(() => null);
-    } else if (message.content.includes("scratch")) {
+        break;
+    case message.content.includes("scratch"):
         message.react('🐱').catch(() => null);
-    }
+        break;
+   }
 }
 
 async function captureHelp(message) {
