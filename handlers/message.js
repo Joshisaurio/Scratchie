@@ -11,6 +11,34 @@ const randomArrayInt = require('../functions/random');
 const type = require('../functions/type.js');
 const emojis = require('../data/emojis.json');
 
+const reactionHandlers = [
+    (message) => {
+        if (message.content.toLowerCase().includes('penguinmod')) {
+            return message.react('🐧').catch(() => null);
+        }
+    },
+    (message) => {
+        if (message.content.toLowerCase().includes('scratch')) {
+            return message.react('1216005306090393680').catch(() => null);
+        }
+    },
+    (message) => {
+        if (message.content.toLowerCase().includes('nitrobolt')) {
+            return message.react('⚡').catch(() => null);
+        }
+    },
+    (message) => {
+        if (message.content.toLowerCase().includes('turbowarp')) {
+            return message.react('🍡').catch(() => null);
+        }
+    },
+    (message) => {
+        if (/\b(hi|hello|hiya|hej|sup|hey)\b/i.test(message.content.toLowerCase())) {
+            return message.react('1359604048801829114').catch(() => null);
+        }
+    }
+]
+
 /**
  * Capture Scratch profile links and send a preview of them
  * @param {object} message 
@@ -217,26 +245,10 @@ async function autoReact(message) {
             message.react('❤️').catch(() => null);
         }
     }
-    
-  switch (true) {
-    case message.content.includes("turbowarp"):
-        message.react('🍡').catch(() => null);
-        break;
-    case message.content.includes("nitrobolt"):
-        message.react('⚡').catch(() => null);
-        break;
-    case message.content.includes("penguinmod"):
-        message.react('🐧').catch(() => null);
-        break;
-    case message.content.includes("hi"):
-    case message.content.includes("hello"):
-    case message.content.includes("hiya"):
-        message.react('1359604048801829114').catch(() => null);
-        break;
-    case message.content.includes("scratch"):
-        message.react('🐱').catch(() => null);
-        break;
-   }
+
+    for (const handler of reactionHandlers) {
+        handler(message);
+    }
 }
 
 async function captureHelp(message) {
