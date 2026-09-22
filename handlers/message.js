@@ -11,8 +11,6 @@ const randomArrayInt = require('../functions/random');
 const type = require('../functions/type.js');
 const emojis = require('../data/emojis.json');
 
-const waveId = emojis.wave.replace(/[^0-9]/g, ''); 
-
 /**
  * Capture Scratch profile links and send a preview of them
  * @param {object} message 
@@ -227,7 +225,7 @@ async function autoReact(message) {
     } else if (message.content.includes("penguinmod")) {
         message.react('🐧').catch(() => null);
     } else if (message.content.includes("hi") || message.content.includes("hello") || message.content.includes("hiya")) {
-        message.react(waveId).catch(() => null);
+        message.react('1359604048801829114').catch(() => null);
     } else if (message.content.includes("scratch")) {
         message.react('🐱').catch(() => null);
     }
