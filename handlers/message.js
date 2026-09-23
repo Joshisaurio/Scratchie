@@ -10,33 +10,13 @@ const challenges = require('../data/challenges.json');
 const randomArrayInt = require('../functions/random');
 const type = require('../functions/type.js');
 
-const reactionHandlers = [
-    (message) => {
-        if (message.content.toLowerCase().includes('penguinmod')) {
-            return message.react('🐧').catch(() => null);
-        }
-    },
-    (message) => {
-        if (message.content.toLowerCase().includes('scratch')) {
-            return message.react('1216005306090393680').catch(() => null);
-        }
-    },
-    (message) => {
-        if (message.content.toLowerCase().includes('nitrobolt')) {
-            return message.react('⚡').catch(() => null);
-        }
-    },
-    (message) => {
-        if (message.content.toLowerCase().includes('turbowarp')) {
-            return message.react('🍡').catch(() => null);
-        }
-    },
-    (message) => {
-        if (/\b(hi|hello|hiya|hej|sup|hey)\b/i.test(message.content.toLowerCase())) {
-            return message.react('1359604048801829114').catch(() => null);
-        }
-    }
-]
+const reactions = [
+    { regex: /penguinmod/i, emoji: '🐧' },
+    { regex: /scratch/i, emoji: '🐱' },
+    { regex: /nitrobolt/i, emoji: '⚡' },
+    { regex: /turbowarp/i, emoji: '🍡' },
+    { regex: /\b(hi|hello|hiya)\b/i, emoji: '👋' }
+];
 
 /**
  * Capture Scratch profile links and send a preview of them
@@ -245,8 +225,10 @@ async function autoReact(message) {
         }
     }
 
-    for (const handler of reactionHandlers) {
-        handler(message);
+    for (const reaction of reactions) {
+        if (reaction.regex.test(message.content.toLowerCase())) {
+            message.react(reaction.emoji).catch(() => null);
+        } 
     }
 }
 
