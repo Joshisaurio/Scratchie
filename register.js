@@ -1,4 +1,4 @@
-const { SlashCommandBuilder, InteractionContextType, REST, Routes } = require('discord.js');
+const { SlashCommandBuilder, InteractionContextType, REST, Routes, StringSelectMenuOptionBuilder, StringSelectMenuComponent } = require('discord.js');
 const { token, clientId, guildId } = require('./config.json');
 
 const commands = [
@@ -11,6 +11,27 @@ const commands = [
             InteractionContextType.PrivateChannel
         ])
         .toJSON(),
+
+    new SlashCommandBuilder()
+        .setName('rule')
+        .setDescription('Quickly check a rule')
+        .setContexts([
+            InteractionContextType.Guild,
+            InteractionContextType.BotDM,
+            InteractionContextType.PrivateChannel
+        ])
+        .addStringOption(option =>
+            option.setName('rule')
+                .setDescription('idk what to put here yet')
+                .setRequired(true)
+                .addChoices(
+                    {name:'Rule 1', value:'rule1'},
+                    {name:'5.03 - No AI', value:'rule2'},
+                    {name:'Rule 3', value:'rule3'},
+                )
+        )
+        .toJSON(),
+
 
     new SlashCommandBuilder()
         .setName('explore')
