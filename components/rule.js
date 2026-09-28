@@ -5,6 +5,8 @@
  * @returns {object}
  */
 
+const rules = require('../data/rules.json');
+
 function container(text, color) {
     return {
         components: [

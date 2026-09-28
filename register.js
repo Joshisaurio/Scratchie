@@ -26,8 +26,10 @@ const commands = [
                 .setRequired(true)
                 .addChoices(
                     {name:'Rule 1', value:'rule1'},
-                    {name:'5.03 - No AI', value:'rule2'},
-                    {name:'Rule 3', value:'rule3'},
+                    {name:'𐅂 5.03 - No AI', value:'rule2'},
+                    {name:'𐅂 5.03 - No AI', value:'rule3'},
+                    {name:'➙⟼➔➙➜➞➡→↦↳⟶⟼⤷i like arrows', value:'rule4'},
+                    {name:'→➔➔➙⟼➔➙➜➞➡→↦↳⟶⟼⤷i like arrows', value:'rule5'},
                 )
         )
         .toJSON(),
