@@ -5,54 +5,97 @@
  * @returns {object}
  */
 
-const rules = require('../data/rules.json');
-
-function container(text, color) {
-    return {
-        components: [
-            {
-                    "type": 17,
-                    "accent_color": 9225410,
-                    "spoiler": false,
-                    "components": [
-                        {
-                            "type": 10,
-                            "content": "## 📜 | Rule 1 - Stay safe!"
-                        },
-                        {
-                            "type": 14,
-                            "divider": true,
-                            "spacing": 1
-                        },
-                        {
-                            "type": 10,
-                            "content": "Don't share personal or sensitive information with anyone, including but not limited to your name, address, phone number, email address, school name, and photos. **You shall not share other peoples sensitive information, regardless of consent.**"
-                        },
-                        {
-                            "type": 1,
-                            "components": [
-                                {
-                                    "type": 2,
-                                    "style": 5,
-                                    "label": "View full rule",
-                                    "emoji": null,
-                                    "disabled": false,
-                                    "url": "https://discord.com/channels/1140996822131802192/1140996822903566347/1371242029849514084"
-                                },
-                                {
-                                    "type": 2,
-                                    "style": 5,
-                                    "label": "View rule expansion",
-                                    "emoji": null,
-                                    "disabled": false,
-                                    "url": "https://discord.com/channels/1140996822131802192/1371242029849514084"
-                                },
-                            ]
-                        }
-                    ]
-                }
-        ],
+function container(title, content, url1, url2, is_subrule) {
+    if (is_subrule) {
+        return {
+            components: [{
+                "type": 17,
+                "accent_color": 9225410,
+                "spoiler": false,
+                "components": [
+                    {
+                        "type": 10,
+                        "content": `### ${title}\n-# *Subrule of Rule ${title[13]}*`
+                    },
+                    {
+                        "type": 14,
+                        "divider": true,
+                        "spacing": 1
+                    },
+                    {
+                        "type": 10,
+                        "content": content
+                    },
+                    {
+                        "type": 1,
+                        "components": [
+                            {
+                                "type": 2,
+                                "style": 5,
+                                "label": "View rule",
+                                "emoji": null,
+                                "disabled": false,
+                                "url": url2
+                            },
+                            {
+                                "type": 2,
+                                "style": 5,
+                                "label": "View parent rule",
+                                "emoji": null,
+                                "disabled": false,
+                                "url": url1
+                            },
+                        ]
+                    }
+                ]
+            }],
+            flags: 32768
+        }
+    } else {
+        return {
+            components: [{
+                "type": 17,
+                "accent_color": 9225410,
+                "spoiler": false,
+                "components": [
+                    {
+                        "type": 10,
+                        "content": "### " + title
+                    },
+                    {
+                        "type": 14,
+                        "divider": true,
+                        "spacing": 1
+                    },
+                    {
+                        "type": 10,
+                        "content": content
+                    },
+                    {
+                        "type": 1,
+                        "components": [
+                            {
+                                "type": 2,
+                                "style": 5,
+                                "label": "View full rule",
+                                "emoji": null,
+                                "disabled": false,
+                                "url": url1
+                            },
+                            {
+                                "type": 2,
+                                "style": 5,
+                                "label": "View rule expansion",
+                                "emoji": null,
+                                "disabled": false,
+                                "url": url2
+                            },
+                        ]
+                    }
+                ]
+            }],
         flags: 32768
+        }
     }
 }
 
