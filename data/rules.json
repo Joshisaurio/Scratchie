@@ -1,0 +1,80 @@
+{
+    "examplerule":{
+        "title":"Title goes here",
+        "content":[
+            "Add rule content here",
+            "Each new item will be interpreted as a new line"
+        ],
+        "url1":"URL of the message",
+        "url2":"URL of the expansion thread",
+        "subrules":{
+            "1":{
+                "title":"Title goes here",
+                "content":[
+                    "Content goes here"
+                ],
+                "url":"URL of the subrule message"
+            }
+        }
+    },
+    "rule1":{
+        "title":"📜 | Rule 1 - Stay Safe!",
+        "content":[
+            "Don't share personal or sensitive information with anyone [...] **You shall not share other peoples sensitive information, regardless of consent.**",
+            "Additionally, **You will not discuss or debate sensitive topics such as religions or politics.** [...]",
+            "We also require **ALL MESSAGES TO BE IN ENGLISH.**",
+            "A breach could result in punishment for your safety and that of the server."
+        ],
+        "url1":"https://discord.com/channels/1140996822131802192/1140996822903566347/1371242029849514084",
+        "url2":"https://discord.com/channels/1140996822131802192/1371242029849514084",
+        "subrules":{
+            "1":{
+                "title":"📖 🌍 | RULE 1.01. - \"__ENGLISH OR AMERICAN.__\"",
+                "content":[
+                    "**It is discouraged for members of the Scratch Community to send messages in other language.**",
+
+                    "**Examples include:**",
+                    "Long messages in a foreign language, regardless of if whomever present understands it or not. \n[...]",
+
+                    "🌐 | If you seek other language servers, do check out the regional scratch servers available."
+                ],
+                "url":"https://discord.com/channels/1140996822131802192/1371242029849514084/1486116328732627216"
+            }
+        }
+    },
+    "rule2":{
+        "title":"📜 | Rule 2 - Be Respectful!",
+        "content":[
+            "Do not be disruptive to other people. [...] Do not engage in chaotic behaviour such as spamming, ghost-pinging, or building walls of text.",
+            "At absolutely no point will we tolerate bigotry, discrimination, nor bullying in our Scratch Community.",
+            "You are obligated to respect the consent of members; should they tell you to stop doing something within reason, stop.",
+            "If you do not respect peoples boundaries, you will not be tolerated."
+        ],
+        "url1":"https://discord.com/channels/1140996822131802192/1140996822903566347/1371242351980449883",
+        "url2":"https://discord.com/channels/1140996822131802192/1371242351980449883",
+        "subrules":{
+            "1":{
+                "title":"📖 🫵 | RULE 2.01. - \"CRAP CRITIQUE.\"",
+                "content":[
+                    "It is forbidden for members of the Scratch Community to react negatively to the showcase posts others have made. [...]",
+                    "You ultimately have the right to provide critique on a person's artwork (which, ideally, you should ask for consent beforehand), but make sure you do so in a way that enables the person to build upon and patch their mistakes. All art has mistakes, please don't just highlight them without offering a solution."
+                ],
+                "url":"https://discord.com/channels/1140996822131802192/1371242351980449883/1486165668801024212"
+            },
+            "2":{
+                "title":"Title goes here",
+                "content":[
+                    "Content goes here"
+                ],
+                "url":"https://discord.com/channels/1140996822131802192/1371242351980449883/1486165668801024212"
+            },
+            "3":{
+                "title":"Title goes here",
+                "content":[
+                    "Content goes here"
+                ],
+                "url":"https://discord.com/channels/1140996822131802192/1371242351980449883/1486165668801024212"
+            }
+        }
+    }
+}
